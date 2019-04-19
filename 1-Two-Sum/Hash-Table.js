@@ -5,15 +5,16 @@
  */
 var twoSum = function(nums, target) {
     
-    const hashTable = {};
-    
-    for (let i = 0; i < nums.length; i++) {
+    var ans = [];
+    var exist = {};
+  
+    for (var i = 0; i < nums.length; i++) {
         
-        hashTable[target - nums[i]] = i;
+      if (typeof(exist[target-nums[i]]) !== 'undefined') {
+          
+          return [exist[target - nums[i]], i];
+      }
         
-        if (nums[i+1] in hashTable) {
-            
-            return [hashTable[nums[i+1]], i+1]
-        }
-    }
+      exist[nums[i]] = i;
+  }
 };
