@@ -1,13 +1,11 @@
 /**
  * @param {string} s
  * @param {string} t
- * @return {boolean}
+ * @return {character}
  */
- 
+
 // O(n)
-var isAnagram = function(s, t) {
-    if (s.length !== t.length) return false;
-    
+var findTheDifference = function(s, t) {
     var letters = new Array(26).fill(0);
     
     // save
@@ -20,8 +18,6 @@ var isAnagram = function(s, t) {
     for (let i = 0; i < t.length; i++) {
         l = t.charCodeAt(i) - 97;
         letters[l]--;
-        if (letters[l] < 0) return false;
+        if (letters[l] < 0) return String.fromCharCode(l + 97);
     }
-    
-    return true;
 };
