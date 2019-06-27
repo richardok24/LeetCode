@@ -11,9 +11,9 @@ var reverseWords = function(s) {
             if(reversedStr.length > 0){
                 reversedStr += ' ';
             }
+			
+			reversedStr += splitArray[i];
         }
-        
-        reversedStr += splitArray[i];
     }
     
     return reversedStr;
