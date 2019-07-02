@@ -5,16 +5,16 @@
 var findRelativeRanks = function(nums) {
     let result = [];
     let sortedArray = nums.slice();
-    sortedArray.sort((a,b) => (b-a));
+    sortedArray = sortedArray.sort((a, b) => (b - a));
     
-    for(let i = 0; i < nums.length; i++) {
-        const j = sortedArray.indexOf(nums[i]);
+    for (let i = 0; i < nums.length; i ++) {
+        let j = sortedArray.indexOf(nums[i]);
         
-        if(j === 0) {
+        if (j == 0) {
             result.push("Gold Medal");
-        } else if(j === 1) {
+        } else if (j == 1) {
             result.push("Silver Medal");
-        } else if(j === 2) {
+        } else if (j == 2) {
             result.push("Bronze Medal");
         } else {
             result.push((j + 1).toString());
